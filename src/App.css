@@ -145,15 +145,15 @@ button {
    justify-content: space-between;
    text-align: left;
 }
-#header .sale{
+#header .sale {
    color: #fff;
 }
-.sale h1{
+.sale h1 {
    font-size: 250px;
    margin: 0 0 10px;
    line-height: 80%;
 }
-.sale p{
+.sale p {
    width: 350px;
    font-size: 28px;
    font-weight: 400;
@@ -171,40 +171,84 @@ button {
    color: #fff;
    gap: 10px;
 }
-#header .ozs p{
+#header .ozs p {
    font-size: 18px;
    font-weight: 400;
 }
-#header .ozs #bold{
+#header .ozs #bold {
    font-weight: 900;
    font-size: 24px;
 }
 
-
 #catalogue .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
 }
-
 #catalogue .card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
+   text-align: left;
+   transition: transform 0.2s ease;
+   max-width: 100%;
+   overflow: hidden;
+   width: 100%;
+   /* border: 1px solid red; */
 }
 
-#catalogue .card:hover {
-  transform: translateY(-5px);
+.card .card-img{
+   width: 100%;
+   max-width: 100%;
+   display: flex;
+   justify-content: center;
+   height: 427px;
+   max-height: 427px;
+   min-height: 427px;
+   overflow: hidden;
+   border-radius: 12px;
+   object-fit: cover;
 }
-
-#catalogue .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+#catalogue .card .card-img #parfum {
+   object-fit: cover;
+   width: 100%;
+   margin: auto;
+   transition: .3s;
+}
+.card:hover #parfum{
+   transform: scale(1.1);
+}
+.card h3 {
+   font-weight: 400;
+   font-size: 28px;
+}
+.card a {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+   color: #8e8e93;
+   font-size: 22px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid #8e8e93;
+   width: fit-content;
+   margin-top: 20px;
+}
+.card a #link {
+   width: 20px;
+   object-fit: contain;
+   border-radius: 0;
+}
+.card p {
+   color: #8e8e93;
+   font-size: 20px;
+   font-weight: 400;
+}
+.card .consistency{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 5px;
+}
+#conImg {
+   width: 24px;
 }
 .reveal {
    opacity: 0;
