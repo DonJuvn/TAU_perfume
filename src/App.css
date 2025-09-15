@@ -1,42 +1,181 @@
-* {
+body {
    font-family: "PP Radio Grotesk";
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+   overflow-x: hidden;
+}
+html {
+   scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+   display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+   margin: 0;
+   font-family: "PP Radio Grotesk";
+   text-decoration: none;
+}
+button {
+   cursor: pointer;
 }
 
-.App {
+.container {
+   width: 90%;
+   max-width: 1536px;
+   margin: 0 auto;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+   width: 2px;
+   height: 2px;
+}
+
+::-webkit-scrollbar-track {
+   background: #0a0a0a; /* dark track */
+   border-radius: 10px;
+}
+
+/* ::-webkit-scrollbar-thumb {
+   background: linear-gradient(
+      180deg,
+      #00aaff,
+      #0066ff
+   ); neon blue gradient 
+   border-radius: 10px;
+   box-shadow: 0 0 6px rgba(0, 150, 255, 0.6); 
+   transition: background 0.3s ease;
+} */
+/* 
+::-webkit-scrollbar-thumb:hover {
+   background: linear-gradient(
+      180deg,
+      #33ccff,
+      #0099ff
+   ); 
+   box-shadow: 0 0 10px rgba(0, 180, 255, 0.9);
+} */
+
+/* Firefox */
+/* * {
+   scrollbar-width: thin;
+   scrollbar-color: #0099ff #0a0a0a; 
+} */
+#title {
+   font-size: 40px;
+   color: #1e1e1e;
+   width: fit-content;
+}
+
+#header {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
    text-align: center;
 }
 
-.App-logo {
-   height: 40vmin;
-   pointer-events: none;
+#header::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   background-image: url("../public/img/bg.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: -1;
+}
+#header::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5); /* чёрный полупрозрачный overlay */
+   z-index: -1; /* перекрывает фон, но ниже контента */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-   .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-   }
+.header {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   justify-content: space-between;
+   margin-top: 50px;
+   align-items: center;
 }
-
-.App-header {
-   background-color: #282c34;
-   min-height: 100vh;
+.header .social {
+   display: flex;
+   flex-direction: row;
+   gap: 15px;
+}
+.header .social a {
+   color: #fff;
+   text-decoration: none;
+   background-color: #ffffff20;
+   display: flex;
+   flex-direction: row;
+   gap: 5px;
+   border-radius: 24px;
+   padding: 0.8rem 1.4rem;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 400;
+   transition: 0.3s;
+}
+.header .social a:hover {
+   transform: scale(1.05);
+}
+#header .container {
+   height: 100%;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
+   text-align: left;
+}
+#header .sale{
+   color: #fff;
+}
+.sale h1{
+   font-size: 250px;
+   margin: 0 0 10px;
+   line-height: 80%;
+}
+.sale p{
+   width: 350px;
+   font-size: 28px;
+   font-weight: 400;
+   margin: 0;
+}
+#header .ozs {
+   margin-bottom: 5vh;
+   display: flex;
+   flex-direction: row;
    align-items: center;
-   justify-content: center;
-   font-size: calc(10px + 2vmin);
-   color: white;
+   background-color: #ffffff20;
+   border-radius: 30px;
+   width: fit-content;
+   padding: 8px 12px;
+   color: #fff;
+   gap: 10px;
 }
-
-.App-link {
-   color: #61dafb;
+#header .ozs p{
+   font-size: 18px;
+   font-weight: 400;
 }
-
-@keyframes App-logo-spin {
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
+#header .ozs #bold{
+   font-weight: 900;
+   font-size: 24px;
 }
