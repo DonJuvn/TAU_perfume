@@ -179,3 +179,40 @@ button {
    font-weight: 900;
    font-size: 24px;
 }
+
+
+#catalogue .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#catalogue .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+#catalogue .card:hover {
+  transform: translateY(-5px);
+}
+
+#catalogue .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.reveal {
+   opacity: 0;
+   transform: translateY(120px);
+   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
