@@ -17,14 +17,14 @@ const Header = () => {
                      </Link>
                   </div>
                   <div className="social">
-                     <Link to="#">
+                     <Link to="https://www.instagram.com/tau.perfume/" target="_blank">
                         Instagram{" "}
                         <img
                            src={process.env.PUBLIC_URL + "img/link.svg"}
                            alt="logo"
                         />
                      </Link>
-                     <Link to="#">
+                     <Link to="https://wa.link/b77ycc">
                         Whatsapp{" "}
                         <img
                            src={process.env.PUBLIC_URL + "img/link.svg"}

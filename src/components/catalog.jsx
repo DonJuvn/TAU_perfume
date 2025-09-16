@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";import RevealOnScroll from "./reveal";
+import React, { useState, useEffect } from "react";
+import RevealOnScroll from "./reveal";
 import { Link } from "react-router-dom";
 
 export default function Catalogue() {
@@ -66,6 +67,27 @@ export default function Catalogue() {
          consistency: "Eau de Toilette",
          price: 34000,
       },
+      {
+         id: 10,
+         img: "img/oudwood.png",
+         name: "Creed Aventus",
+         consistency: "Eau de Parfum",
+         price: 120000,
+      },
+      {
+         id: 11,
+         img: "img/oudwood.png",
+         name: "Paco Rabanne Invictus",
+         consistency: "Eau de Toilette",
+         price: 36000,
+      },
+      {
+         id: 12,
+         img: "img/oudwood.png",
+         name: "Jean Paul Gaultier Le Male",
+         consistency: "Eau de Toilette",
+         price: 34000,
+      },
    ];
 
    const consistencyImg = [
@@ -93,43 +115,53 @@ export default function Catalogue() {
    }, []);
 
    const handleLoadMore = () => {
-      setVisibleCount((prev) => prev + 6);
-   };
+  setVisibleCount((prev) => prev + 6);
+
+  setTimeout(() => {
+    document
+      .querySelector(".grid")
+      .lastElementChild.scrollIntoView({ behavior: "smooth" });
+  }, 100); // small delay so DOM updates first
+};
+
 
    return (
       <section id="catalogue">
          <div className="container">
-            <h2>Каталог</h2>
+            <h2 id="title">Каталог</h2>
             <div className="grid">
                {shuffledCards.slice(0, visibleCount).map((card) => (
                   <RevealOnScroll key={card.id}>
                      <div className="card">
                         <div className="card-img">
-                           <img
-                              id="parfum"
-                              src={card.img}
-                              alt={card.name}
-                           />
+                           <img id="parfum" src={card.img} alt={card.name} />
                         </div>
                         <div className="card-body">
-                           <div className="consistency">
-                              <img
-                                 id="conImg"
-                                 src={card.consistencyIcon}
-                                 alt="consistency"
-                              />
-                              <p>{card.consistency}</p>
+                           <div className="container">
+                              <div className="consistency">
+                                 <img
+                                    id="conImg"
+                                    src={card.consistencyIcon}
+                                    alt="consistency"
+                                 />
+                                 <p>{card.consistency}</p>
+                              </div>
+                              <h3>{card.name}</h3>
+                              {/* <strong>{card.price} ₸</strong> */}
+                              <Link id='link' to="#">
+                                 Купить{" "}
+                                 <img
+                                    id="link-img"
+                                    src="./img/grey-link.svg"
+                                    alt="link icon"
+                                 />
+                                 <img
+                                    id="link-black"
+                                    src="./img/link-black.svg"
+                                    alt="link icon"
+                                 />
+                              </Link>
                            </div>
-                           <h3>{card.name}</h3>
-                           {/* <strong>{card.price} ₸</strong> */}
-                           <Link to="#">
-                              Купить{" "}
-                              <img
-                                 id="link"
-                                 src="./img/grey-link.svg"
-                                 alt="link icon"
-                              />
-                           </Link>
                         </div>
                      </div>
                   </RevealOnScroll>
@@ -138,7 +170,7 @@ export default function Catalogue() {
 
             {visibleCount < shuffledCards.length && (
                <button className="load-more" onClick={handleLoadMore}>
-                  Load More
+                  Посмотреть еще
                </button>
             )}
          </div>
